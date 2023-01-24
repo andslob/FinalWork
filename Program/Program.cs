@@ -1,4 +1,9 @@
-﻿void SecondArray(string[] array1, string[] array2)
+﻿void InputArray(string[] array1)
+{
+    for (int i = 0; i < array1.Length; i++)
+        array1[i] = Convert.ToString(Console.ReadLine());
+}
+void SecondArray(string[] array1, string[] array2)
 {
     int count = 0;
     for (int i = 0; i < array1.Length; i++)
@@ -20,7 +25,12 @@ void PrintArray(string[] array)
 }
 
 Console.Clear();
-string[] array1 = new string[4] {"hello", "2", "world", ":-)"};
+Console.Write("Введите размер массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
+string[] array1 = new string[n];
+Console.Write("Введите элементы массива: ");
+InputArray(array1);
 string[] array2 = new string[array1.Length];
+Console.WriteLine();
 SecondArray(array1, array2);
 PrintArray(array2);
